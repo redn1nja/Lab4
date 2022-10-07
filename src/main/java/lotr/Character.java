@@ -1,30 +1,36 @@
 package lotr;
 
 import lombok.Getter;
+import lombok.Setter;
 
-@Getter
-public class Character {
+import java.util.Random;
+
+@Getter @Setter
+public abstract class Character {
     private int hp;
+    protected Random rand = new Random();
     private int power;
 
     Character(int hp, int power){
-        this.hp = hp;
+        this.hp = Math.max(hp, 0);
         this.power = power;
     }
     public void kick(Character c){
-
+        System.out.println("123");
     }
 
     boolean isAlive(){
         return getHp()>0;
     }
 
-
+    public void setHp(int hp){
+        this.hp = Math.max(hp, 0);
+    }
     @Override
     public String toString() {
-        return Character.class.getSimpleName()+"{" +
-                "power=" + power +
-                ", hp=" + hp +
+        return this.getClass().getSimpleName()+"{" +
+                "hp=" + hp +
+                ", power=" + power +
                 '}';
     }
 }
