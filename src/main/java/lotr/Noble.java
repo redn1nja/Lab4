@@ -11,7 +11,7 @@ public class Noble extends Character {
 
     }
     public void kick(Character c){
-        c.setHp(c.getHp()-(rand.nextInt(10)+getPower()-10));
+        c.setHp (c.getHp()-(rand.nextInt(10)+getPower()-10));
     }
     @Override
     public String toString() {
