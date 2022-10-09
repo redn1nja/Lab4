@@ -19,7 +19,7 @@ public abstract class Character {
         System.out.println("123");
     }
 
-    boolean isAlive(){
+    public boolean isAlive(){
         return getHp()>0;
     }
 
