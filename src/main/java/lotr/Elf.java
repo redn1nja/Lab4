@@ -1,18 +1,17 @@
 package lotr;
 
+import kick.NormalKick;
+
 public class Elf extends Character{
+    NormalKick ability = new NormalKick();
     public Elf(){
         super(10,10);
+        ability.setPower(getPower());
     }
 
     @Override
     public void kick(Character c) {
-        if(getPower()>c.getPower()){
-            c.setHp(0);
-        }
-        else {
-            c.setHp(c.getHp()-1);
-        }
+        ability.kick(c);
     }
 
     @Override
