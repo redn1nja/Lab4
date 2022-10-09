@@ -17,5 +17,11 @@ public class GameManager {
 
 
         }
+        if (c1.isAlive()){
+            System.out.println(c1.getClass().getSimpleName() + " won");
+        }
+        else {
+            System.out.println(c2.getClass().getSimpleName() + " won");
+        }
     }
 }
