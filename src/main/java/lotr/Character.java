@@ -11,7 +11,7 @@ public abstract class Character {
     protected Random rand = new Random();
     private int power;
 
-    Character(int hp, int power){
+    public Character(int hp, int power){
         this.hp = Math.max(hp, 0);
         this.power = power;
     }

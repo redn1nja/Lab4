@@ -1,9 +1,16 @@
 package mechanics;
+import lombok.extern.slf4j.Slf4j;
 import lotr.Character;
+
+import java.lang.reflect.InvocationTargetException;
 
 public class GameManager {
     void fight (Character c1, Character c2){
         while (c1.isAlive() && c2.isAlive()){
+            if(c1.getClass().getSimpleName().equals("Hobbit") && c2.getClass().getSimpleName().equals("Hobbit")){
+                System.out.println("Hi Friend");
+                break;
+            }
             int round = 1;
             int hp2 = c2.getHp();
             int hp1 = c1.getHp();
@@ -23,5 +30,12 @@ public class GameManager {
         else {
             System.out.println(c2.getClass().getSimpleName() + " won");
         }
+    }
+
+    public static void main(String[] args)  {
+
+        CharacterFactory fact = new CharacterFactory();
+        GameManager man = new GameManager();
+        man.fight(fact.createCharacter(), fact.createCharacter());
     }
 }

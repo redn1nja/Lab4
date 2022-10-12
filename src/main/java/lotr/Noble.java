@@ -4,10 +4,10 @@ import kick.NobleKick;
 
 import java.util.Random;
 
-public class Noble extends Character {
+public abstract class Noble extends Character {
     NobleKick ability = new NobleKick();
 
-    Noble(int hp, int power){
+    public Noble(int hp, int power){
         super(hp, power);
         Random rand = new Random();
         setHp(getHp()+rand.nextInt(10));
